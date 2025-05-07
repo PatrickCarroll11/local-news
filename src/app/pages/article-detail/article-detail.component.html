@@ -1,0 +1,24 @@
+<div class="article-detail-page" *ngIf="article">
+  <div class="container">
+    <div class="article-header">
+      <div class="category">{{ article.category | titlecase }}</div>
+      <h1>{{ article.title }}</h1>
+      <div class="meta">
+        <span class="author">By {{ article.author }}</span>
+        <span class="date">{{ article.date | date }}</span>
+      </div>
+    </div>
+
+    <div class="article-image" *ngIf="article.imageUrl">
+      <img [src]="article.imageUrl" [alt]="article.title" />
+    </div>
+
+    <div class="article-content">
+      <p>{{ article.content }}</p>
+    </div>
+
+    <div class="back-link">
+      <a routerLink="/">← Back to Home</a>
+    </div>
+  </div>
+</div>

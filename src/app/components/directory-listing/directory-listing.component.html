@@ -1,0 +1,36 @@
+<div class="listing-card">
+  <div class="listing-image" *ngIf="listing.imageUrl">
+    <img [src]="listing.imageUrl" [alt]="listing.name" />
+  </div>
+  <div class="listing-content">
+    <h3>
+      <a [routerLink]="['/directory', listing.category, listing.id]">
+        {{ listing.name }}
+        <span class="verified-badge" *ngIf="listing.isVerified"
+          >✓ Verified</span
+        >
+      </a>
+    </h3>
+    <div class="listing-meta">
+      <span class="phone">{{ listing.phone }}</span>
+      <span class="address">{{ listing.address }}</span>
+    </div>
+    <p class="description">{{ listing.description }}</p>
+    <div class="listing-actions">
+      <a
+        *ngIf="listing.website"
+        [href]="listing.website"
+        target="_blank"
+        class="website-btn"
+      >
+        Visit Website
+      </a>
+      <a
+        [routerLink]="['/directory', listing.category, listing.id]"
+        class="details-btn"
+      >
+        View Details
+      </a>
+    </div>
+  </div>
+</div>

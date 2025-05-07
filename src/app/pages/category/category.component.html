@@ -1,0 +1,12 @@
+<div class="category-page">
+  <div class="container">
+    <h1 class="page-title">{{ category | titlecase }}</h1>
+
+    <div class="articles-list">
+      <app-article-card
+        *ngFor="let article of articles"
+        [article]="article"
+      ></app-article-card>
+    </div>
+  </div>
+</div>

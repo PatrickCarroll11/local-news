@@ -1,0 +1,12 @@
+<div class="sponsor-card">
+  <div class="logo-container">
+    <img [src]="sponsor.logoUrl" [alt]="sponsor.name" />
+  </div>
+  <div class="content">
+    <h4>{{ sponsor.name }}</h4>
+    <p class="description">{{ sponsor.description }}</p>
+    <a [href]="sponsor.website" target="_blank" class="website"
+      >Visit Website</a
+    >
+  </div>
+</div>

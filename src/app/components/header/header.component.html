@@ -1,0 +1,40 @@
+<!-- <header class="header">
+  <div class="header-top">
+    <div class="container">
+      <div class="date">{{ currentDate }}</div>
+      <div class="weather">Maynooth, 14°C</div>
+    </div>
+  </div>
+  <div class="header-main">
+    <div class="container">
+      <h1 class="logo">The Maynooth Post</h1>
+      <p class="tagline">Keeping Maynooth Connected Since 2023</p>
+    </div>
+  </div>
+</header> -->
+
+<header class="header">
+  <div class="header-top">
+    <div class="container">
+      <div class="date">{{ currentDate }}</div>
+      <div class="weather">Maynooth, 14°C</div>
+    </div>
+  </div>
+  <div class="header-main">
+    <div class="container">
+      <!-- Replace text logo with image logo -->
+      <a routerLink="/" class="logo-link">
+        <img
+          src="assets/images/logo.jpeg"
+          alt="The Maynooth Post"
+          class="logo-image"
+          style="width: 15%; height: auto"
+        />
+      </a>
+      <p class="tagline">
+        Your local digital hub keeping Maynooth connected, informed, and
+        thriving.
+      </p>
+    </div>
+  </div>
+</header>

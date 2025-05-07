@@ -1,0 +1,28 @@
+<!-- <nav class="category-nav">
+  <div class="container">
+    <ul>
+      <li *ngFor="let category of categories">
+        <a [routerLink]="['/category', category.id]">{{ category.name }}</a>
+      </li>
+    </ul>
+  </div>
+</nav> -->
+
+<nav class="category-nav">
+  <div class="container">
+    <ul>
+      <li *ngFor="let category of categories">
+        <!-- Special handling for Directory -->
+        <a *ngIf="category.id === 'directory'" routerLink="/directory">{{
+          category.name
+        }}</a>
+        <!-- Normal news categories -->
+        <a
+          *ngIf="category.id !== 'directory'"
+          [routerLink]="['/category', category.id]"
+          >{{ category.name }}</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>

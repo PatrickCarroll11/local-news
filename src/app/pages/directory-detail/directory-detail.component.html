@@ -1,0 +1,119 @@
+<!-- <div class="article-detail-page" *ngIf="listing">
+    <div class="container">
+      <div class="article-header">
+        <div class="category">Business Directory</div>
+        <h1>{{ listing.name }}</h1>
+        <div class="meta">
+          <span class="author">{{ listing.address }}</span>
+        </div>
+      </div>
+      
+      <div class="article-image" *ngIf="listing.imageUrl">
+        <img [src]="listing.imageUrl" [alt]="listing.name">
+      </div>
+      
+      <div class="article-content">
+        <h3>About This Business</h3>
+        <p>{{ listing.description }}</p>
+        
+        <h3>Services Offered</h3>
+        <ul>
+          <li *ngFor="let service of listing.services">{{ service }}</li>
+        </ul>
+        
+        <h3>Contact Information</h3>
+        <p><strong>Phone:</strong> {{ listing.phone }}</p>
+        <p *ngIf="listing.email"><strong>Email:</strong> {{ listing.email }}</p>
+        <p *ngIf="listing.website"><strong>Website:</strong> <a [href]="listing.website" target="_blank">{{ listing.website }}</a></p>
+      </div>
+      
+      <div class="back-link">
+        <a routerLink="/directory">← Back to Directory</a>
+      </div>
+    </div>
+  </div> -->
+<div class="directory-detail-page">
+  <!-- Loading State -->
+  <div *ngIf="isLoading" class="loading-message">
+    <p>Loading business details...</p>
+  </div>
+
+  <!-- Main Content -->
+  <div *ngIf="!isLoading && listing" class="business-detail-container">
+    <!-- Business Header -->
+    <div class="business-header">
+      <div class="breadcrumb">Business Directory</div>
+      <h1 class="business-name">{{ listing.name }}</h1>
+      <div class="business-meta">
+        <span class="business-category">{{
+          listing.category | titlecase
+        }}</span>
+        <span *ngIf="listing.isVerified" class="verified-tag">✓ Verified</span>
+      </div>
+    </div>
+
+    <!-- Business Image -->
+    <div *ngIf="listing.imageUrl" class="business-image">
+      <img [src]="listing.imageUrl" [alt]="listing.name + ' business image'" />
+    </div>
+
+    <!-- Business Info Sections -->
+    <div class="business-content">
+      <!-- About Section -->
+      <section class="about-section">
+        <h2>About</h2>
+        <p>{{ listing.description }}</p>
+      </section>
+
+      <!-- Services Section -->
+      <section *ngIf="listing.services?.length" class="services-section">
+        <h2>Services</h2>
+        <ul class="services-list">
+          <li *ngFor="let service of listing.services">{{ service }}</li>
+        </ul>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact-section">
+        <h2>Contact</h2>
+        <div class="contact-info">
+          <div *ngIf="listing.address" class="contact-item">
+            <span class="material-icons">location_on</span>
+            <p>{{ listing.address }}</p>
+          </div>
+
+          <div *ngIf="listing.phone" class="contact-item">
+            <span class="material-icons">phone</span>
+            <p>
+              <a [href]="'tel:' + listing.phone">{{ listing.phone }}</a>
+            </p>
+          </div>
+
+          <div *ngIf="listing.email" class="contact-item">
+            <span class="material-icons">email</span>
+            <p>
+              <a [href]="'mailto:' + listing.email">{{ listing.email }}</a>
+            </p>
+          </div>
+
+          <div *ngIf="listing.website" class="contact-item">
+            <span class="material-icons">public</span>
+            <p>
+              <a [href]="listing.website" target="_blank">{{
+                listing.website
+              }}</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-button">
+      <a [routerLink]="['/directory']" class="back-link">
+        <span class="material-icons">arrow_back</span>
+        Back to Directory
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+<div class="directory-page">
+  <div class="container">
+    <h1 class="page-title">Maynooth Business Directory</h1>
+
+    <div class="directory-intro">
+      <p>Find trusted local businesses serving the Maynooth community</p>
+    </div>
+
+    <!-- Category Navigation -->
+    <nav class="directory-nav">
+      <button (click)="loadAllListings()" [class.active]="!activeCategory">
+        All Listings
+      </button>
+      <button
+        *ngFor="let category of categories"
+        (click)="getListingsByCategory(category.id)"
+        [class.active]="activeCategory === category.id"
+      >
+        {{ category.name }}
+      </button>
+    </nav>
+
+    <!-- Loading State -->
+    <div *ngIf="isLoading" class="loading">
+      <p>Loading businesses...</p>
+    </div>
+
+    <!-- Business Listings -->
+    <div *ngIf="!isLoading" class="business-listings">
+      <!-- No results message -->
+      <div *ngIf="listings.length === 0" class="no-results">
+        <p>No businesses found in this category</p>
+      </div>
+
+      <!-- Business Cards -->
+      <div *ngFor="let business of listings" class="business-card">
+        <div class="business-image" *ngIf="business.imageUrl">
+          <img [src]="business.imageUrl" [alt]="business.name" />
+        </div>
+        <div class="business-content">
+          <h3>
+            <a [routerLink]="['/directory', business.category, business.id]">
+              {{ business.name }}
+              <span *ngIf="business.isVerified" class="verified-badge"
+                >✓ Verified</span
+              >
+            </a>
+          </h3>
+
+          <p class="business-description">{{ business.description }}</p>
+
+          <div class="business-meta">
+            <span class="business-address">{{ business.address }}</span>
+            <span class="business-phone">
+              <a [href]="'tel:' + business.phone">{{ business.phone }}</a>
+            </span>
+          </div>
+
+          <div *ngIf="business.services?.length" class="business-services">
+            <h4>Services:</h4>
+            <ul>
+              <li *ngFor="let service of business.services">{{ service }}</li>
+            </ul>
+          </div>
+
+          <a
+            [routerLink]="['/directory', business.category, business.id]"
+            class="view-details"
+          >
+            View Details →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

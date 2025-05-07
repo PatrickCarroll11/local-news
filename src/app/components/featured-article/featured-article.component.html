@@ -1,0 +1,16 @@
+<div class="featured-article" *ngIf="article">
+  <div class="image-container" *ngIf="article.imageUrl">
+    <img [src]="article.imageUrl" [alt]="article.title" />
+  </div>
+  <div class="content">
+    <div class="category">{{ article.category | titlecase }}</div>
+    <h2>
+      <a [routerLink]="['/article', article.id]">{{ article.title }}</a>
+    </h2>
+    <p class="summary">{{ article.summary }}</p>
+    <div class="meta">
+      <span class="author">By {{ article.author }}</span>
+      <span class="date">{{ article.date | date }}</span>
+    </div>
+  </div>
+</div>

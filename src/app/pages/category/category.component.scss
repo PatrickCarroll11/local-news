@@ -1,0 +1,15 @@
+.category-page {
+  padding: 30px 0;
+
+  .page-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+  }
+
+  .articles-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}

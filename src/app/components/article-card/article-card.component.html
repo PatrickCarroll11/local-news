@@ -1,0 +1,20 @@
+<div
+  class="article-card"
+  [class.small]="size === 'small'"
+  [class.large]="size === 'large'"
+>
+  <div class="image-container" *ngIf="article.imageUrl">
+    <img [src]="article.imageUrl" [alt]="article.title" />
+  </div>
+  <div class="content">
+    <div class="category">{{ article.category | titlecase }}</div>
+    <h3>
+      <a [routerLink]="['/article', article.id]">{{ article.title }}</a>
+    </h3>
+    <p class="summary">{{ article.summary }}</p>
+    <div class="meta">
+      <span class="author">By {{ article.author }}</span>
+      <span class="date">{{ article.date | date }}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+.sponsor-card {
+  border: 1px solid #eee;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+
+  .logo-container {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+
+  h4 {
+    margin: 0 0 5px;
+    font-size: 1.1rem;
+  }
+
+  .description {
+    color: #555;
+    font-size: 0.9rem;
+    margin: 0 0 10px;
+  }
+
+  .website {
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

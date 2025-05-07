@@ -1,0 +1,158 @@
+.directory-detail-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .loading-message {
+    text-align: center;
+    padding: 3rem;
+    font-size: 1.2rem;
+    color: #666;
+  }
+
+  .business-detail-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .business-header {
+    padding: 2rem;
+    border-bottom: 1px solid #eee;
+
+    .breadcrumb {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+
+    .business-name {
+      margin: 0;
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .business-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+
+      .business-category {
+        background: #f0f0f0;
+        padding: 0.25rem 0.75rem;
+        border-radius: 1rem;
+        font-size: 0.85rem;
+      }
+
+      .verified-tag {
+        background: #4caf50;
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 1rem;
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  .business-image {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .business-content {
+    padding: 2rem;
+    display: grid;
+    gap: 2rem;
+
+    section {
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #333;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 0.5rem;
+      }
+    }
+
+    .services-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 0.5rem;
+
+      li {
+        padding: 0.5rem;
+        background: #f9f9f9;
+        border-radius: 4px;
+      }
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 1rem;
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        .material-icons {
+          color: #666;
+        }
+
+        a {
+          color: #0066cc;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .back-button {
+    padding: 1rem 2rem;
+    border-top: 1px solid #eee;
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #0066cc;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .directory-detail-page {
+    padding: 1rem;
+
+    .business-header {
+      padding: 1rem;
+    }
+
+    .business-image {
+      height: 250px;
+    }
+
+    .business-content {
+      padding: 1rem;
+    }
+  }
+}

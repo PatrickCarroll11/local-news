@@ -1,0 +1,172 @@
+.directory-page {
+  padding: 2rem 0;
+
+  .page-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #000;
+  }
+
+  .directory-intro {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #555;
+  }
+
+  .directory-nav {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+
+    button {
+      background: #f5f5f5;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+
+      &:hover {
+        background: #e5e5e5;
+      }
+
+      &.active {
+        background: #000;
+        color: white;
+      }
+    }
+  }
+
+  .loading,
+  .no-results {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+  }
+
+  .business-listings {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .business-card {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    transition: all 0.2s;
+
+    &:hover {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .business-image {
+      height: 200px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .business-content {
+      padding: 1.5rem;
+
+      h3 {
+        margin: 0 0 1rem;
+        font-size: 1.5rem;
+
+        a {
+          color: #000;
+          text-decoration: none;
+        }
+      }
+
+      .verified-badge {
+        background: #0066cc;
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+      }
+
+      .business-description {
+        color: #444;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+      }
+
+      .business-meta {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        color: #666;
+
+        a {
+          color: #0066cc;
+          text-decoration: none;
+        }
+      }
+
+      .business-services {
+        margin-bottom: 1rem;
+
+        h4 {
+          font-size: 1rem;
+          margin: 0 0 0.5rem;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+
+          li {
+            background: #f5f5f5;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+          }
+        }
+      }
+
+      .view-details {
+        color: #0066cc;
+        text-decoration: none;
+        font-weight: 500;
+        display: inline-block;
+        margin-top: 1rem;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .directory-page {
+    padding: 1rem;
+
+    .business-card {
+      grid-template-columns: 1fr;
+
+      .business-image {
+        height: 150px;
+      }
+    }
+  }
+}

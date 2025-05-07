@@ -1,0 +1,67 @@
+<div class="home-page">
+  <div class="container">
+    <div class="main-content">
+      <section class="featured-section">
+        <h2 class="section-title">Featured Stories</h2>
+        <div class="featured-articles">
+          <app-featured-article
+            *ngFor="let article of featuredArticles"
+            [article]="article"
+          ></app-featured-article>
+        </div>
+      </section>
+
+      <section class="latest-news">
+        <h2 class="section-title">Latest News</h2>
+        <div class="article-grid">
+          <div
+            class="article-column"
+            *ngFor="let article of latestArticles.slice(0, 3)"
+          >
+            <app-article-card [article]="article"></app-article-card>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="sidebar">
+      <section class="newsletter-signup">
+        <div class="signup-card">
+          <h3>Get Maynooth Updates Weekly</h3>
+          <p>
+            Sign up for our newsletter to receive local news, events, and
+            exclusive deals
+          </p>
+
+          <form (submit)="subscribeNewsletter()" class="signup-form">
+            <input
+              type="email"
+              [(ngModel)]="newsletterEmail"
+              name="newsletterEmail"
+              placeholder="Enter your email address"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+
+          <small>We'll never share your email. Unsubscribe anytime.</small>
+        </div>
+      </section>
+      <div class="advertisement">
+        <h3>Local Business Spotlight</h3>
+        <img src="assets/images/placeholder-ad.jpg" alt="Advertisement" />
+        <p>
+          Support our local sponsors who make this community resource possible.
+        </p>
+      </div>
+
+      <div class="sponsors">
+        <h3>Our Sponsors</h3>
+        <app-sponsor-card
+          *ngFor="let sponsor of sponsors"
+          [sponsor]="sponsor"
+        ></app-sponsor-card>
+      </div>
+    </aside>
+  </div>
+</div>

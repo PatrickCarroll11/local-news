@@ -1,0 +1,112 @@
+.home-page {
+  padding: 30px 0;
+
+  .container {
+    display: flex;
+    gap: 30px;
+  }
+
+  .main-content {
+    flex: 2;
+  }
+
+  .sidebar {
+    flex: 1;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #000;
+  }
+
+  .featured-articles {
+    margin-bottom: 40px;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .advertisement {
+    background: #f5f5f5;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+
+    h3 {
+      margin-top: 0;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      margin: 15px 0;
+    }
+  }
+  .newsletter-signup {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f8f8f8;
+    border-radius: 8px;
+    border: 1px solid #eee;
+
+    .signup-card {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #333;
+      }
+
+      p {
+        color: #666;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .signup-form {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+
+      input {
+        flex: 1;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+
+        &:focus {
+          outline: none;
+          border-color: #0066cc;
+        }
+      }
+
+      button {
+        background: #0066cc;
+        color: white;
+        border: none;
+        padding: 0 1.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.2s;
+
+        &:hover {
+          background: #0052a3;
+        }
+      }
+    }
+
+    small {
+      color: #999;
+      font-size: 0.8rem;
+    }
+  }
+}
